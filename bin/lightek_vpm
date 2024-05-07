@@ -2,4 +2,6 @@
 
 require_relative '../lib/lightek_vpm'
 
-LightekVPM::InitGenerator.start
+# Your gem's main entry point, where you define the CLI interface or command logic
+# For example, you might define a CLI class and start it here
+CLI.start(ARGV)
