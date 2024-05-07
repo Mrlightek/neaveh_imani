@@ -4,7 +4,7 @@ require_relative "lib/lightek_vpm/version"
 
 Gem::Specification.new do |spec|
   spec.name = "lightek_vpm"
-  spec.version = "0.2.0"
+  spec.version = "0.2.1"
   spec.authors = ["Marlon Henry"]
   spec.email = ["mrlightek@gmail.com"]
 
