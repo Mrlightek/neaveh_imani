@@ -1,11 +1,12 @@
-require "thor"
+require 'rails/generators'
 module LightekVpm
-	class TestGenerator < Thor::Group
-		include Thor::Actions
+	module Generators
+		class TestGenerator < Rails::Generators::Base
 
-		def test
-			say "Testing this out to see if I got it right"
+		def test_this_code
+			puts "Testing this out to see if I got it right"
 			
 		end
+	end
 	end
 end
