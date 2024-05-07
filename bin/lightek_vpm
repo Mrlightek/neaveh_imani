@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'lightek_vpm/test_generator'
+
+LightekVPM::InitGenerator.start
