@@ -21,4 +21,9 @@ Gem::Specification.new do |spec|
 
   # Uncomment and specify dependencies if needed
   # spec.add_dependency "example-gem", "~> 1.0"
+  spec.add_dependency "sassc-rails"
+  spec.add_dependency "bootstrap", "~> 5.3.3"
+  spec.add_dependency "devise"
+  spec.add_dependency "cancancan"
+  spec.add_dependency "actiontext"
 end
