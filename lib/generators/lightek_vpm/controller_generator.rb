@@ -7,9 +7,11 @@ module LightekVpm
     class ControllerGenerator < Rails::Generators::NamedBase
       source_root File.expand_path('../templates', __FILE__)
       include Rails::Generators::ResourceHelpers
+      include GeneratorHelpers # Include the GeneratorHelpers module
+
       class_option :skip_show, type: :boolean, default: false, desc: 'Skip "show" action'
 
-      desc 'Generates controller, controller_spec and views for the model with the given NAME.'
+      desc 'Generates controller, controller_spec, and views for the model with the given NAME.'
 
       def copy_controller_and_spec_files
         template 'controller.rb', File.join('app/controllers', "#{controller_file_name}_controller.rb")
@@ -31,7 +33,7 @@ module LightekVpm
       end
 
       def add_abilities
-        ability_string = "n    can :manage, #{class_name}, user_id: user.id"
+        ability_string = "\n    can :manage, #{class_name}, user_id: user.id"
         inject_into_file "#{Rails.root}/app/models/ability.rb", ability_string, after: /def initialize[a-z()]+/i
       end
 
