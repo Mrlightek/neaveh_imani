@@ -14,6 +14,7 @@ module LightekVpm
       desc 'Generates controller, controller_spec, and views for the model with the given NAME.'
 
       def copy_controller_and_spec_files
+        @editable_attribute_names = editable_attributes.map(&:name).map { |attr| ":#{attr}" }.join(', ')
         template 'controller.rb', File.join('app/controllers', "#{controller_file_name}_controller.rb")
       end
 
