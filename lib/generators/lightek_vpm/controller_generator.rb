@@ -5,6 +5,7 @@ module LightekVpm
   module Generators
     # Custom scaffolding generator
     class ControllerGenerator < Rails::Generators::NamedBase
+      source_root File.expand_path('../templates', __FILE__)
       include Rails::Generators::ResourceHelpers
       class_option :skip_show, type: :boolean, default: false, desc: 'Skip "show" action'
 
