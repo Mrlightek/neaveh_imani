@@ -13,11 +13,14 @@ attr_accessor :options, :attributes
     end
   end
 
-  def editable_attributes
-    attributes ||= model_columns_for_attributes.map do |column|
-      Rails::Generators::GeneratedAttribute.new(column.name.to_s, column.type.to_s)
+    def editable_attributes
+      model_columns = class_name.constantize.columns
+      model_columns.reject { |c| %w[id created_at updated_at].include?(c.name) }
     end
-  end
+
+    def editable_attribute_names
+      editable_attributes.map(&:name).map { |attr| ":#{attr}" }.join(', ')
+    end
       
 def view_files
     actions = %w(index new edit _form)
