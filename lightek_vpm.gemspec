@@ -26,4 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "devise"
   spec.add_dependency "cancancan"
   spec.add_dependency "actiontext"
+  s.add_dependency 'ice_cube'
+  s.add_dependency 'streamio-ffmpeg', '~> 3.2'
 end
