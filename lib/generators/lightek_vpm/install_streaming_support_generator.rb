@@ -4,14 +4,10 @@ module LightekVpm
   module Generators
     class InstallStreamingSupport < Rails::Generators::Base
       source_root File.expand_path('templates', __dir__)
-      
-  def create_media_models
-    generate 'model Media title:string description:text media_type:string url:string user:references'
-    route "resources :media"
-  end
 
       def create_media_models
-        generate 'model', 'Media title:string description:text file:string user:references'
+        generate 'model', 'Media title:string description:text media_type:string url:string user:references'
+        run_migration
         generate 'model', 'Stream media:references status:string'
         rake 'db:migrate'
       end
