@@ -1,0 +1,117 @@
+<%= form_with(model: dashboard) do |form| %>
+  <% if dashboard.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(dashboard.errors.count, "error") %> prohibited this dashboard from being saved:</h2>
+
+      <ul>
+        <% dashboard.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :site_visits, style: "display: block" %>
+    <%= form.number_field :site_visits %>
+  </div>
+
+  <div>
+    <%= form.label :site_sales, style: "display: block" %>
+    <%= form.number_field :site_sales %>
+  </div>
+
+  <div>
+    <%= form.label :sites_unique_visits, style: "display: block" %>
+    <%= form.number_field :sites_unique_visits %>
+  </div>
+
+  <div>
+    <%= form.label :bounce_rate, style: "display: block" %>
+    <%= form.number_field :bounce_rate %>
+  </div>
+
+  <div>
+    <%= form.label :has_message, style: "display: block" %>
+    <%= form.check_box :has_message %>
+  </div>
+
+  <div>
+    <%= form.label :has_notification, style: "display: block" %>
+    <%= form.check_box :has_notification %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :profile_pic, style: "display: block" %>
+    <%= form.text_field :profile_pic %>
+  </div>
+
+  <div>
+    <%= form.label :server_status, style: "display: block" %>
+    <%= form.text_field :server_status %>
+  </div>
+
+  <div>
+    <%= form.label :cpu_usage, style: "display: block" %>
+    <%= form.number_field :cpu_usage %>
+  </div>
+
+  <div>
+    <%= form.label :memory_usage, style: "display: block" %>
+    <%= form.number_field :memory_usage %>
+  </div>
+
+  <div>
+    <%= form.label :disk_usage, style: "display: block" %>
+    <%= form.number_field :disk_usage %>
+  </div>
+
+  <div>
+    <%= form.label :database, style: "display: block" %>
+    <%= form.number_field :database %>
+  </div>
+
+  <div>
+    <%= form.label :domain, style: "display: block" %>
+    <%= form.number_field :domain %>
+  </div>
+
+  <div>
+    <%= form.label :email_account, style: "display: block" %>
+    <%= form.number_field :email_account %>
+  </div>
+
+  <div>
+    <%= form.label :new_reg_users, style: "display: block" %>
+    <%= form.text_field :new_reg_users %>
+  </div>
+
+  <div>
+    <%= form.label :sales_status, style: "display: block" %>
+    <%= form.number_field :sales_status %>
+  </div>
+
+  <div>
+    <%= form.label :recent_article, style: "display: block" %>
+    <%= form.text_field :recent_article %>
+  </div>
+
+  <div>
+    <%= form.label :statistic_summary, style: "display: block" %>
+    <%= form.text_field :statistic_summary %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

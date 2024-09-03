@@ -1,0 +1,45 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  site_visits: 1
+  site_sales: 1
+  sites_unique_visits: 1
+  bounce_rate: 1
+  has_message: false
+  has_notification: false
+  name: MyString
+  profile_pic: MyString
+  server_status: MyString
+  cpu_usage: 1
+  memory_usage: 1
+  disk_usage: 1
+  database: 1
+  domain: 1
+  email_account: 1
+  new_reg_users: MyString
+  sales_status: 1
+  recent_article: MyString
+  statistic_summary: MyString
+  user: one
+
+two:
+  site_visits: 1
+  site_sales: 1
+  sites_unique_visits: 1
+  bounce_rate: 1
+  has_message: false
+  has_notification: false
+  name: MyString
+  profile_pic: MyString
+  server_status: MyString
+  cpu_usage: 1
+  memory_usage: 1
+  disk_usage: 1
+  database: 1
+  domain: 1
+  email_account: 1
+  new_reg_users: MyString
+  sales_status: 1
+  recent_article: MyString
+  statistic_summary: MyString
+  user: two
