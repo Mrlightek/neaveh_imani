@@ -1,0 +1,14 @@
+<!-- app/views/payments/new.html.erb -->
+<%= form_with url: payments_path, method: :post do %>
+  <div>
+    <label>Amount:</label>
+    <%= text_field_tag :amount %>
+  </div>
+
+  <div>
+    <label>Currency:</label>
+    <%= text_field_tag :currency, 'USD' %>
+  </div>
+
+  <%= submit_tag 'Pay with PayPal' %>
+<% end %>
