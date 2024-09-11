@@ -3,19 +3,25 @@
     <div class="br-sideleft overflow-y-auto">
       <label class="sidebar-label pd-x-15 mg-t-20">Navigation</label>
       <div class="br-sideleft-menu">
-        <a href="index.html" class="br-menu-link active">
+        <a href="/dashboard/1" class="br-menu-link active">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
             <span class="menu-item-label">Dashboard</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
-        <a href="mailbox.html" class="br-menu-link">
+        <a href="/mailbox" class="br-menu-link">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
             <span class="menu-item-label">Mailbox</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
-        <a href="card-dashboard.html" class="br-menu-link">
+        <a href="/settings" class="br-menu-link">
+          <div class="br-menu-item">
+            <i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i>
+            <span class="menu-item-label">Settings</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+        <a href="/card-dashboard/1" class="br-menu-link">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
             <span class="menu-item-label">Cards &amp; Widgets</span>
@@ -76,9 +82,9 @@
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
         <ul class="br-menu-sub nav flex-column">
-          <li class="nav-item"><a href="form-elements.html" class="nav-link">Form Elements</a></li>
-          <li class="nav-item"><a href="form-layouts.html" class="nav-link">Form Layouts</a></li>
-          <li class="nav-item"><a href="form-validation.html" class="nav-link">Form Validation</a></li>
+          <li class="nav-item"><a href="form-elements.html" class="nav-link">Form Pages</a></li>
+          <li class="nav-item"><a href="form-layouts.html" class="nav-link">Form Posts</a></li>
+          <li class="nav-item"><a href="form-validation.html" class="nav-link">Form Users</a></li>
           <li class="nav-item"><a href="form-wizards.html" class="nav-link">Form Wizards</a></li>
           <li class="nav-item"><a href="form-editor-code.html" class="nav-link">Code Editor</a></li>
           <li class="nav-item"><a href="form-editor-text.html" class="nav-link">Text Editor</a></li>
@@ -149,6 +155,7 @@
         <div class="d-flex align-items-center justify-content-between pd-x-15">
           <div>
             <p class="tx-10 tx-roboto tx-uppercase tx-spacing-1 tx-white op-3 mg-b-2 space-nowrap">Memory Usage</p>
+            <%@dashboard = Dashboard.find(1)%>
             <h5 class="tx-lato tx-white tx-normal mg-b-0"><%if @dashboard.memory_usage.nil?%> 
               <%=@defaultValue = 0%>%
               <%else%>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_03_185400) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_11_203333) do
   create_table "dashboards", force: :cascade do |t|
     t.integer "site_visits"
     t.integer "site_sales"
@@ -37,6 +37,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_03_185400) do
     t.index ["user_id"], name: "index_dashboards_on_user_id"
   end
 
+  create_table "mailboxes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -45,6 +50,19 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_03_185400) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "product_pages", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,10 +87,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_03_185400) do
     t.string "degree"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "mailbox_id"
+    t.integer "dashboard_id"
+    t.index ["dashboard_id"], name: "index_users_on_dashboard_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["mailbox_id"], name: "index_users_on_mailbox_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "dashboards", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "users", "dashboards"
+  add_foreign_key "users", "mailboxes"
 end

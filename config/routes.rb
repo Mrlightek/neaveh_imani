@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :product_pages
+  resources :settings
+  resources :mailboxes
   resources :dashboards
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -20,4 +23,10 @@ end
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get 'dashboard/:id', to: 'dashboards#show'
+  get 'mailbox/', to: 'mailboxes#index'
+  get 'card-dashboard/:id', to: 'dashboards#edit'
+  get 'settings', to: 'settings#index'
+  
 end

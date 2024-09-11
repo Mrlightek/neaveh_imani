@@ -1,0 +1,12 @@
+<% content_for :title, "Editing product page" %>
+
+<h1>Editing product page</h1>
+
+<%= render "form", product_page: @product_page %>
+
+<br>
+
+<div>
+  <%= link_to "Show this product page", @product_page %> |
+  <%= link_to "Back to product pages", product_pages_path %>
+</div>
