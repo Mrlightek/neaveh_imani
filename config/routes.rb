@@ -28,5 +28,6 @@ end
   get 'mailbox/', to: 'mailboxes#index'
   get 'card-dashboard/:id', to: 'dashboards#edit'
   get 'settings', to: 'settings#index'
+  get 'payments', to: 'payments#create'
   
 end

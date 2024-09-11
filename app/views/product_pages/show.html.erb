@@ -1,10 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @product_page %>
+<%= button_to "Purchase", payments_path, :id => "open-contacts-dialog-btn",
+      :class => "btn btn-primary", :method => :get %>
 
-<div>
+      <%@user = User.find_by_email("mhenry1228@gmail.com")%>
+      <%if @user.email == "mhenry@gmail.com"%>
+      <div>
   <%= link_to "Edit this product page", edit_product_page_path(@product_page) %> |
   <%= link_to "Back to product pages", product_pages_path %>
 
   <%= button_to "Destroy this product page", @product_page, method: :delete %>
 </div>
+      <%else%>
+      <div>
+        <br>
+  <%= link_to "Back to product pages", product_pages_path %>
+</div>
+      <%end%>
