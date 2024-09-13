@@ -1,0 +1,31 @@
+<!-- app/views/games/show.html.erb -->
+<h1><%= @game.name %></h1>
+
+<div class="board">
+  <h2>Board</h2>
+  <ul>
+    <% @game.game_spaces.each do |space| %>
+      <li><%= space.name %> - Type: <%= space.space_type %> - Position: <%= space.position %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="players">
+  <h2>Players</h2>
+  <ul>
+    <% @game.players.each do |player| %>
+      <li>
+        <%= player.name %> - Current Space: <%= player.current_space.try(:name) %> 
+        <ul>
+          <li>Character: <%= player.character.name %></li>
+          <li>Health: <%= player.character.health %></li>
+          <li>Attack: <%= player.character.attack %></li>
+          <li>Defense: <%= player.character.defense %></li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to "Start Game", start_game_path(@game), method: :post %>
+
