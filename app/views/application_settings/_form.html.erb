@@ -1,0 +1,39 @@
+<%= form_with(model: application_setting) do |form| %>
+  <% if application_setting.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(application_setting.errors.count, "error") %> prohibited this application_setting from being saved:</h2>
+
+      <ul>
+        <% application_setting.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :logo_location, style: "display: block" %>
+    <%= form.text_field :logo_location %>
+  </div>
+
+  <div>
+    <%= form.label :tag_line, style: "display: block" %>
+    <%= form.text_area :tag_line %>
+  </div>
+
+  <div>
+    <%= form.label :company_name, style: "display: block" %>
+    <%= form.text_field :company_name %>
+  </div>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

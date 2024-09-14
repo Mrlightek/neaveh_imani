@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
   #before_action :set_dashboard, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /dashboards or /dashboards.json
   def index
@@ -8,8 +9,8 @@ class DashboardsController < ApplicationController
 
   # GET /dashboards/1 or /dashboards/1.json
   def show
-    @user = User.find(params[:id])
-    @dashboard = Dashboard.find(params[:id])
+    @user = current_user
+    @dashboard = @user.dashboard
   end
 
   # GET /dashboards/new
@@ -19,6 +20,16 @@ class DashboardsController < ApplicationController
 
   # GET /dashboards/1/edit
   def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to @user, notice: 'Profile updated successfully.'
+    else
+      render :edit
+    end
   end
 
   # POST /dashboards or /dashboards.json
@@ -57,6 +68,11 @@ class DashboardsController < ApplicationController
       format.html { redirect_to dashboards_url, notice: "Dashboard was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def sign_out_user
+    sign_out(current_user)
+    redirect_to new_user_session_path # Redirect to Devise's sign-in page
   end
 
   private

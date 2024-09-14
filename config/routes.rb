@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :application_settings
+  resources :profiles
   resources :product_pages
   resources :settings
   resources :mailboxes
@@ -29,5 +31,7 @@ end
   get 'card-dashboard/:id', to: 'dashboards#edit'
   get 'settings', to: 'settings#index'
   get 'payments', to: 'payments#create'
+  get 'sign_out', to: "dashboards#sign_out_user"
+  get 'profile_edit/:id', to: 'profiles#show'
   
 end

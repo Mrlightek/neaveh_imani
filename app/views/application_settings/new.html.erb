@@ -1,0 +1,11 @@
+<% content_for :title, "New application setting" %>
+
+<h1>New application setting</h1>
+
+<%= render "form", application_setting: @application_setting %>
+
+<br>
+
+<div>
+  <%= link_to "Back to application settings", application_settings_path %>
+</div>

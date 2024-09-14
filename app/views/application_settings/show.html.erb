@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @application_setting %>
+
+<div>
+  <%= link_to "Edit this application setting", edit_application_setting_path(@application_setting) %> |
+  <%= link_to "Back to application settings", application_settings_path %>
+
+  <%= button_to "Destroy this application setting", @application_setting, method: :delete %>
+</div>

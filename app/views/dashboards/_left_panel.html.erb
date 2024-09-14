@@ -161,7 +161,7 @@
         <div class="d-flex align-items-center justify-content-between pd-x-15">
           <div>
             <p class="tx-10 tx-roboto tx-uppercase tx-spacing-1 tx-white op-3 mg-b-2 space-nowrap">Memory Usage</p>
-            <%@dashboard = Dashboard.find(1)%>
+            <%@dashboard = Dashboard.new()%>
             <h5 class="tx-lato tx-white tx-normal mg-b-0"><%if @dashboard.memory_usage.nil?%> 
               <%=@defaultValue = 0%>%
               <%else%>

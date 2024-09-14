@@ -77,12 +77,15 @@
   <div class="container">
     <!-- Main Row -->
     <div class="row">
+      <% if user_signed_in? %>
       <!-- Left Panel -->
       <div class="col-md-3">
         <%= render 'dashboards/left_panel' %>
       </div>
+      <%end%>
 
       <!-- Main Content -->
+      <div class="col-md-8"></div>
       <div  align="center">
         <%= yield %>
       </div>
