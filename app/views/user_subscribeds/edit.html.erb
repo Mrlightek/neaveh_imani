@@ -1,0 +1,12 @@
+<% content_for :title, "Editing user subscribed" %>
+
+<h1>Editing user subscribed</h1>
+
+<%= render "form", user_subscribed: @user_subscribed %>
+
+<br>
+
+<div>
+  <%= link_to "Show this user subscribed", @user_subscribed %> |
+  <%= link_to "Back to user subscribeds", user_subscribeds_path %>
+</div>

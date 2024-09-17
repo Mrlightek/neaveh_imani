@@ -1,16 +1,18 @@
+<div>
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Dashboards" %>
+<% content_for :title, "Posts" %>
 
-<h1>Dashboards</h1>
+<h1>Posts</h1>
 
 <div id="dashboards">
-  <% @dashboards.each do |dashboard| %>
-    <%= render dashboard %>
+  <% @post.each do |post| %>
+    <%= render post %>
     <p>
-      <%= link_to "Show this dashboard", dashboard %>
+      <%= link_to "Show this post", post %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New dashboard", new_dashboard_path %>
+<a href="posts/new">Create a new post</a>
+</div>

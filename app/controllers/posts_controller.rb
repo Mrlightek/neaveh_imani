@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	#before_action :find_model
+    before_action :authenticate_user!
 
 	def index
 		@post = Post.all
@@ -46,6 +47,6 @@ class PostsController < ApplicationController
 
 	# Only allow a list of trusted parameters through.
     def post_params
-      params.permit(:title,:body,:published,:user_id)
+      params.permit(:title,:body,:published,current_user)
     end
 end

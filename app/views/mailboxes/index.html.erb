@@ -1,18 +1,1 @@
-<p style="color: green"><%= notice %></p>
-
-<% content_for :title, "Mailboxes" %>
-
-<h1>Mailboxes</h1>
-
-<div id="mailboxes">
-  <% @mailboxes.each do |mailbox| %>
-    <%= render mailbox %>
-    <p>
-      <%= link_to "Show this mailbox", mailbox %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New mailbox", new_mailbox_path %>
-
 <%= render 'mailbox_dashboard' %>

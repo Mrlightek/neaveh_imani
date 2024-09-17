@@ -7,6 +7,9 @@ class User < ApplicationRecord
          has_one_attached :profile_pic
          has_one :dashboard
          has_one :application_setting
+         has_many :user_subscribed
+         has_many :user_subscriber
+         has_many :messages
 
          # Method to return the URL of the attached profile picture
   def profile_pic_url

@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_14_194413) do
-  create_table "active_storage_attachments", force: :cascade do |t|
+ActiveRecord::Schema[7.2].define(version: 2024_09_16_135453) do
+  create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_14_194413) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", force: :cascade do |t|
+  create_table "active_storage_blobs", charset: "utf8", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -33,13 +33,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_14_194413) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "active_storage_variant_records", force: :cascade do |t|
+  create_table "active_storage_variant_records", charset: "utf8", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "application_settings", force: :cascade do |t|
+  create_table "application_settings", charset: "utf8", force: :cascade do |t|
     t.string "name"
     t.string "logo_location"
     t.text "tag_line"
@@ -48,7 +48,21 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_14_194413) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "dashboards", force: :cascade do |t|
+  create_table "categories", charset: "utf8", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "collections", charset: "utf8", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_collections_on_user_id"
+  end
+
+  create_table "dashboards", charset: "utf8", force: :cascade do |t|
     t.integer "site_visits"
     t.integer "site_sales"
     t.integer "sites_unique_visits"
@@ -68,28 +82,67 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_14_194413) do
     t.integer "sales_status"
     t.string "recent_article"
     t.string "statistic_summary"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_dashboards_on_user_id"
   end
 
-  create_table "mailboxes", force: :cascade do |t|
+  create_table "downloads", charset: "utf8", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_downloads_on_user_id"
+  end
+
+  create_table "favorites", charset: "utf8", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "homes", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "mailboxes", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", charset: "utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "to"
+    t.bigint "user_id", null: false
+    t.boolean "is_fav"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "pages", charset: "utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", charset: "utf8", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.boolean "published"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
-  create_table "product_pages", force: :cascade do |t|
+  create_table "product_pages", charset: "utf8", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "price"
@@ -97,17 +150,42 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_14_194413) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "profiles", force: :cascade do |t|
+  create_table "profiles", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "settings", force: :cascade do |t|
+  create_table "settings", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "topics", charset: "utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.bigint "category_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_topics_on_category_id"
+    t.index ["user_id"], name: "index_topics_on_user_id"
+  end
+
+  create_table "user_subscribeds", charset: "utf8", force: :cascade do |t|
+    t.integer "to"
+    t.integer "from"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_subscribers", charset: "utf8", force: :cascade do |t|
+    t.integer "to"
+    t.integer "from"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -129,21 +207,35 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_14_194413) do
     t.string "degree"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "mailbox_id"
-    t.integer "dashboard_id"
-    t.integer "application_settings_id"
+    t.bigint "mailbox_id"
+    t.bigint "dashboard_id"
+    t.bigint "application_settings_id"
+    t.bigint "user_subscribed_id", null: false
+    t.bigint "user_subscribeds_id"
+    t.bigint "user_subscribers_id"
     t.index ["application_settings_id"], name: "index_users_on_application_settings_id"
     t.index ["dashboard_id"], name: "index_users_on_dashboard_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["mailbox_id"], name: "index_users_on_mailbox_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["user_subscribed_id"], name: "index_users_on_user_subscribed_id"
+    t.index ["user_subscribeds_id"], name: "index_users_on_user_subscribeds_id"
+    t.index ["user_subscribers_id"], name: "index_users_on_user_subscribers_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "collections", "users"
   add_foreign_key "dashboards", "users"
+  add_foreign_key "downloads", "users"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "topics", "categories"
+  add_foreign_key "topics", "users"
   add_foreign_key "users", "application_settings", column: "application_settings_id"
   add_foreign_key "users", "dashboards"
   add_foreign_key "users", "mailboxes"
+  add_foreign_key "users", "user_subscribeds", column: "user_subscribeds_id"
+  add_foreign_key "users", "user_subscribers", column: "user_subscribers_id"
 end

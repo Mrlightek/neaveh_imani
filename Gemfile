@@ -59,3 +59,4 @@ group :test do
 end
 gem "devise", "~> 4.9"
 gem 'paypal-checkout-sdk', '~> 1.0'
+gem 'cancancan'

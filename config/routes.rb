@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
+  resources :messages
+  resources :user_subscribers
+  resources :user_subscribeds
+  resources :collections
+  resources :favorites
+  resources :downloads
+  resources :pages
+  resources :topics
+  resources :categories
+  resources :homes
   resources :application_settings
   resources :profiles
   resources :product_pages
   resources :settings
   resources :mailboxes
   resources :dashboards
+  resources :posts
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Paypal
@@ -24,7 +35,7 @@ end
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  # root "posts#index"
+   root "dashboards#show"
 
   get 'dashboard/:id', to: 'dashboards#show'
   get 'mailbox/', to: 'mailboxes#index'
@@ -33,5 +44,7 @@ end
   get 'payments', to: 'payments#create'
   get 'sign_out', to: "dashboards#sign_out_user"
   get 'profile_edit/:id', to: 'profiles#show'
+  #get 'posts', to: 'posts#index'
+  #get 'new_post', to: 'posts#new'
   
 end

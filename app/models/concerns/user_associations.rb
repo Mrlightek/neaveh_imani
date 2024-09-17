@@ -17,9 +17,9 @@ module UserAssociations
     # Create dashboard and mailbox for the user
     dashboard = Dashboard.create(user: self)
   mailbox = Mailbox.create()
-  application_setting = ApplicationSetting.create()
+  
   self.mailbox_id = mailbox.id
-  self.application_setting = application_setting.id
+  
 
   if dashboard.persisted? && mailbox.persisted?
     puts "Dashboard and Mailbox created for user #{self.id}"

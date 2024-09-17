@@ -9,7 +9,8 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1 or /profiles/1.json
   def show
-    @user = current_user
+      @user = User.find(params[:id])
+    @currentuser = current_user
   end
 
   # GET /profiles/new
@@ -19,6 +20,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+      @user = current_user
   end
 
   # POST /profiles or /profiles.json

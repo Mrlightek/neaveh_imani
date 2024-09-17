@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "User subscribeds" %>
+
+<h1>User subscribeds</h1>
+
+<div id="user_subscribeds">
+  <% @user_subscribeds.each do |user_subscribed| %>
+    <%= render user_subscribed %>
+    <p>
+      <%= link_to "Show this user subscribed", user_subscribed %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New user subscribed", new_user_subscribed_path %>

@@ -1,9 +1,11 @@
 class MailboxesController < ApplicationController
   before_action :set_mailbox, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /mailboxes or /mailboxes.json
   def index
     @mailboxes = Mailbox.all
+    @user = current_user
   end
 
   # GET /mailboxes/1 or /mailboxes/1.json

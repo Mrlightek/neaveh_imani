@@ -79,23 +79,28 @@
     <div class="row">
       <% if user_signed_in? %>
       <!-- Left Panel -->
-      <div class="col-md-3">
+      <div class="col-md-8">
         <%= render 'dashboards/left_panel' %>
+        <%= render 'dashboards/head_panel'%>
       </div>
+      
       <%end%>
 
       <!-- Main Content -->
-      <div class="col-md-8"></div>
-      <div  align="center">
+      <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
+      <div>
         <%= yield %>
       </div>
+      
     </div>
 
     <!-- Add clearfix or a margin utility class to avoid overlap -->
     <div class="clearfix"></div>
 
     <!-- Footer Row -->
-    <div class="row mt-4">
+    <div class="row md-4">
       <%= render 'layouts/footer'%>
     </div>
     
