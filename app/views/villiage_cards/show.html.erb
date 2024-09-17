@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @villiage_card %>
+
+<div>
+  <%= link_to "Edit this villiage card", edit_villiage_card_path(@villiage_card) %> |
+  <%= link_to "Back to villiage cards", villiage_cards_path %>
+
+  <%= button_to "Destroy this villiage card", @villiage_card, method: :delete %>
+</div>

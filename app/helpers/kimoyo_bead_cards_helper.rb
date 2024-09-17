@@ -1,0 +1,2 @@
+module KimoyoBeadCardsHelper
+end

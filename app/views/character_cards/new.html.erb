@@ -1,0 +1,11 @@
+<% content_for :title, "New character card" %>
+
+<h1>New character card</h1>
+
+<%= render "form", character_card: @character_card %>
+
+<br>
+
+<div>
+  <%= link_to "Back to character cards", character_cards_path %>
+</div>

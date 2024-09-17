@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @strong_hold_card %>
+
+<div>
+  <%= link_to "Edit this strong hold card", edit_strong_hold_card_path(@strong_hold_card) %> |
+  <%= link_to "Back to strong hold cards", strong_hold_cards_path %>
+
+  <%= button_to "Destroy this strong hold card", @strong_hold_card, method: :delete %>
+</div>

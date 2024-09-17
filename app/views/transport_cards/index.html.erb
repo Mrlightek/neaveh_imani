@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Transport cards" %>
+
+<h1>Transport cards</h1>
+
+<div id="transport_cards">
+  <% @transport_cards.each do |transport_card| %>
+    <%= render transport_card %>
+    <p>
+      <%= link_to "Show this transport card", transport_card %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New transport card", new_transport_card_path %>

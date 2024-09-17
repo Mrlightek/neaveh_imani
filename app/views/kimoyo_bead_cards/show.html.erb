@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @kimoyo_bead_card %>
+
+<div>
+  <%= link_to "Edit this kimoyo bead card", edit_kimoyo_bead_card_path(@kimoyo_bead_card) %> |
+  <%= link_to "Back to kimoyo bead cards", kimoyo_bead_cards_path %>
+
+  <%= button_to "Destroy this kimoyo bead card", @kimoyo_bead_card, method: :delete %>
+</div>

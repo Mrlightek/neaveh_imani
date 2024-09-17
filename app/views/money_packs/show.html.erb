@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @money_pack %>
+
+<div>
+  <%= link_to "Edit this money pack", edit_money_pack_path(@money_pack) %> |
+  <%= link_to "Back to money packs", money_packs_path %>
+
+  <%= button_to "Destroy this money pack", @money_pack, method: :delete %>
+</div>

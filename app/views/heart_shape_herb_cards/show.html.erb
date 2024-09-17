@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @heart_shape_herb_card %>
+
+<div>
+  <%= link_to "Edit this heart shape herb card", edit_heart_shape_herb_card_path(@heart_shape_herb_card) %> |
+  <%= link_to "Back to heart shape herb cards", heart_shape_herb_cards_path %>
+
+  <%= button_to "Destroy this heart shape herb card", @heart_shape_herb_card, method: :delete %>
+</div>

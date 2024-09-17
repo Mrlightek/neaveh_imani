@@ -1,0 +1,2 @@
+class UtilityCard < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class KimoyoBeadCard < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class MoneyPack < ApplicationRecord
+end

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @game_objective %>
+
+<div>
+  <%= link_to "Edit this game objective", edit_game_objective_path(@game_objective) %> |
+  <%= link_to "Back to game objectives", game_objectives_path %>
+
+  <%= button_to "Destroy this game objective", @game_objective, method: :delete %>
+</div>

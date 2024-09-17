@@ -1,0 +1,2 @@
+class VilliageCard < ApplicationRecord
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_17_113938) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_17_123826) do
   create_table "accountings", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,6 +44,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_113938) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "alliances", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "application_settings", charset: "utf8", force: :cascade do |t|
     t.string "name"
     t.string "logo_location"
@@ -65,6 +70,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_113938) do
 
   create_table "categories", charset: "utf8", force: :cascade do |t|
     t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "character_cards", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -118,6 +128,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_113938) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "dices", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "downloads", charset: "utf8", force: :cascade do |t|
     t.string "title"
     t.bigint "user_id", null: false
@@ -144,7 +159,22 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_113938) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "game_objectives", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_players", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "games", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "heart_shape_herb_cards", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -160,6 +190,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_113938) do
   end
 
   create_table "invoices", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "kimoyo_bead_cards", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -185,6 +220,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_113938) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "money_packs", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "notifications", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -198,6 +238,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_113938) do
   create_table "pages", charset: "utf8", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -260,6 +305,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_113938) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "strong_hold_cards", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "subscriptions", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -275,6 +325,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_113938) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "title_deed_cards", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tokens", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "topics", charset: "utf8", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -284,6 +344,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_113938) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_topics_on_category_id"
     t.index ["user_id"], name: "index_topics_on_user_id"
+  end
+
+  create_table "transport_cards", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_subscribeds", charset: "utf8", force: :cascade do |t|
@@ -336,6 +401,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_113938) do
     t.index ["user_subscribed_id"], name: "index_users_on_user_subscribed_id"
     t.index ["user_subscribeds_id"], name: "index_users_on_user_subscribeds_id"
     t.index ["user_subscribers_id"], name: "index_users_on_user_subscribers_id"
+  end
+
+  create_table "utility_cards", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "villiage_cards", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "weathers", charset: "utf8", force: :cascade do |t|

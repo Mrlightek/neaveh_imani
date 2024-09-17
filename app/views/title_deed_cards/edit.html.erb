@@ -1,0 +1,12 @@
+<% content_for :title, "Editing title deed card" %>
+
+<h1>Editing title deed card</h1>
+
+<%= render "form", title_deed_card: @title_deed_card %>
+
+<br>
+
+<div>
+  <%= link_to "Show this title deed card", @title_deed_card %> |
+  <%= link_to "Back to title deed cards", title_deed_cards_path %>
+</div>

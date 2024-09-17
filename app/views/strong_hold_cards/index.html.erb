@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Strong hold cards" %>
+
+<h1>Strong hold cards</h1>
+
+<div id="strong_hold_cards">
+  <% @strong_hold_cards.each do |strong_hold_card| %>
+    <%= render strong_hold_card %>
+    <p>
+      <%= link_to "Show this strong hold card", strong_hold_card %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New strong hold card", new_strong_hold_card_path %>

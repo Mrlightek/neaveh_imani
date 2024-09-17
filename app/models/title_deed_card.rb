@@ -1,0 +1,2 @@
+class TitleDeedCard < ApplicationRecord
+end

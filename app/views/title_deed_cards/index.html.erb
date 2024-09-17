@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Title deed cards" %>
+
+<h1>Title deed cards</h1>
+
+<div id="title_deed_cards">
+  <% @title_deed_cards.each do |title_deed_card| %>
+    <%= render title_deed_card %>
+    <p>
+      <%= link_to "Show this title deed card", title_deed_card %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New title deed card", new_title_deed_card_path %>

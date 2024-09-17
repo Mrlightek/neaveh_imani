@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  resources :game_players
+  resources :game_objectives
+  resources :dices
+  resources :money_packs
+  resources :strong_hold_cards
+  resources :villiage_cards
+  resources :heart_shape_herb_cards
+  resources :kimoyo_bead_cards
+  resources :utility_cards
+  resources :transport_cards
+  resources :alliances
+  resources :title_deed_cards
+  resources :character_cards
+  resources :tokens
+  resources :payments
   resources :onboardings
   resources :accountings
   resources :human_resources

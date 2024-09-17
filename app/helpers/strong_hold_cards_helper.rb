@@ -1,0 +1,2 @@
+module StrongHoldCardsHelper
+end

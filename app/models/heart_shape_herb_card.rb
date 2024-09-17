@@ -1,0 +1,2 @@
+class HeartShapeHerbCard < ApplicationRecord
+end

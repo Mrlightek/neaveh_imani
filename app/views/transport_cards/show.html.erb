@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @transport_card %>
+
+<div>
+  <%= link_to "Edit this transport card", edit_transport_card_path(@transport_card) %> |
+  <%= link_to "Back to transport cards", transport_cards_path %>
+
+  <%= button_to "Destroy this transport card", @transport_card, method: :delete %>
+</div>

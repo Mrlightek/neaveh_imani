@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @title_deed_card %>
+
+<div>
+  <%= link_to "Edit this title deed card", edit_title_deed_card_path(@title_deed_card) %> |
+  <%= link_to "Back to title deed cards", title_deed_cards_path %>
+
+  <%= button_to "Destroy this title deed card", @title_deed_card, method: :delete %>
+</div>

@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Villiage cards" %>
+
+<h1>Villiage cards</h1>
+
+<div id="villiage_cards">
+  <% @villiage_cards.each do |villiage_card| %>
+    <%= render villiage_card %>
+    <p>
+      <%= link_to "Show this villiage card", villiage_card %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New villiage card", new_villiage_card_path %>

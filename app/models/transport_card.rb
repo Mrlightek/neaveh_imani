@@ -1,0 +1,2 @@
+class TransportCard < ApplicationRecord
+end

@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Heart shape herb cards" %>
+
+<h1>Heart shape herb cards</h1>
+
+<div id="heart_shape_herb_cards">
+  <% @heart_shape_herb_cards.each do |heart_shape_herb_card| %>
+    <%= render heart_shape_herb_card %>
+    <p>
+      <%= link_to "Show this heart shape herb card", heart_shape_herb_card %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New heart shape herb card", new_heart_shape_herb_card_path %>

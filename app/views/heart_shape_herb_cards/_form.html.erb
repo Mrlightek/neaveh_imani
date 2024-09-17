@@ -1,0 +1,17 @@
+<%= form_with(model: heart_shape_herb_card) do |form| %>
+  <% if heart_shape_herb_card.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(heart_shape_herb_card.errors.count, "error") %> prohibited this heart_shape_herb_card from being saved:</h2>
+
+      <ul>
+        <% heart_shape_herb_card.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

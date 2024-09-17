@@ -1,0 +1,17 @@
+<%= form_with(model: kimoyo_bead_card) do |form| %>
+  <% if kimoyo_bead_card.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(kimoyo_bead_card.errors.count, "error") %> prohibited this kimoyo_bead_card from being saved:</h2>
+
+      <ul>
+        <% kimoyo_bead_card.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

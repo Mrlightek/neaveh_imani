@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Money packs" %>
+
+<h1>Money packs</h1>
+
+<div id="money_packs">
+  <% @money_packs.each do |money_pack| %>
+    <%= render money_pack %>
+    <p>
+      <%= link_to "Show this money pack", money_pack %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New money pack", new_money_pack_path %>

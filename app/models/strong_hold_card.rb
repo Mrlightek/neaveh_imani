@@ -1,0 +1,2 @@
+class StrongHoldCard < ApplicationRecord
+end

@@ -1,0 +1,17 @@
+<%= form_with(model: title_deed_card) do |form| %>
+  <% if title_deed_card.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(title_deed_card.errors.count, "error") %> prohibited this title_deed_card from being saved:</h2>
+
+      <ul>
+        <% title_deed_card.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

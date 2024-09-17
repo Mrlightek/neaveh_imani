@@ -1,0 +1,12 @@
+<% content_for :title, "Editing utility card" %>
+
+<h1>Editing utility card</h1>
+
+<%= render "form", utility_card: @utility_card %>
+
+<br>
+
+<div>
+  <%= link_to "Show this utility card", @utility_card %> |
+  <%= link_to "Back to utility cards", utility_cards_path %>
+</div>
