@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @retention %>
+
+<div>
+  <%= link_to "Edit this retention", edit_retention_path(@retention) %> |
+  <%= link_to "Back to retentions", retentions_path %>
+
+  <%= button_to "Destroy this retention", @retention, method: :delete %>
+</div>

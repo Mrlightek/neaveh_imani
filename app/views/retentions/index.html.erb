@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Retentions" %>
+
+<h1>Retentions</h1>
+
+<div id="retentions">
+  <% @retentions.each do |retention| %>
+    <%= render retention %>
+    <p>
+      <%= link_to "Show this retention", retention %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New retention", new_retention_path %>

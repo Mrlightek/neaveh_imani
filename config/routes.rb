@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  resources :onboardings
+  resources :accountings
+  resources :human_resources
+  resources :retentions
+  resources :customer_services
+  resources :sales
+  resources :marketings
+  resources :supports
+  resources :shippings
+  resources :invoices
+  resources :billings
+  resources :shopping_carts
+  resources :games
+  resources :streamings
+  resources :notifications
+  resources :events
+  resources :closets
+  resources :weathers
+  resources :shoppings
+  resources :subscriptions
+  resources :therapies
+  resources :datings
+  resources :bankings
+  resources :forums
   resources :messages
   resources :user_subscribers
   resources :user_subscribeds

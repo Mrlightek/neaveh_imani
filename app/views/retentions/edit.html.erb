@@ -1,0 +1,12 @@
+<% content_for :title, "Editing retention" %>
+
+<h1>Editing retention</h1>
+
+<%= render "form", retention: @retention %>
+
+<br>
+
+<div>
+  <%= link_to "Show this retention", @retention %> |
+  <%= link_to "Back to retentions", retentions_path %>
+</div>

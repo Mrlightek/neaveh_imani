@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @onboarding %>
+
+<div>
+  <%= link_to "Edit this onboarding", edit_onboarding_path(@onboarding) %> |
+  <%= link_to "Back to onboardings", onboardings_path %>
+
+  <%= button_to "Destroy this onboarding", @onboarding, method: :delete %>
+</div>

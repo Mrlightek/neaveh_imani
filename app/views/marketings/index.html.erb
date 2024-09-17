@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Marketings" %>
+
+<h1>Marketings</h1>
+
+<div id="marketings">
+  <% @marketings.each do |marketing| %>
+    <%= render marketing %>
+    <p>
+      <%= link_to "Show this marketing", marketing %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New marketing", new_marketing_path %>

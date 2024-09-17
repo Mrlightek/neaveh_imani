@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @marketing %>
+
+<div>
+  <%= link_to "Edit this marketing", edit_marketing_path(@marketing) %> |
+  <%= link_to "Back to marketings", marketings_path %>
+
+  <%= button_to "Destroy this marketing", @marketing, method: :delete %>
+</div>

@@ -1,0 +1,2 @@
+class HumanResource < ApplicationRecord
+end

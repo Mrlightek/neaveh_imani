@@ -1,0 +1,12 @@
+<% content_for :title, "Editing dating" %>
+
+<h1>Editing dating</h1>
+
+<%= render "form", dating: @dating %>
+
+<br>
+
+<div>
+  <%= link_to "Show this dating", @dating %> |
+  <%= link_to "Back to datings", datings_path %>
+</div>

@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Streamings" %>
+
+<h1>Streamings</h1>
+
+<div id="streamings">
+  <% @streamings.each do |streaming| %>
+    <%= render streaming %>
+    <p>
+      <%= link_to "Show this streaming", streaming %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New streaming", new_streaming_path %>

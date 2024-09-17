@@ -1,0 +1,17 @@
+<%= form_with(model: therapy) do |form| %>
+  <% if therapy.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(therapy.errors.count, "error") %> prohibited this therapy from being saved:</h2>
+
+      <ul>
+        <% therapy.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Therapies" %>
+
+<h1>Therapies</h1>
+
+<div id="therapies">
+  <% @therapies.each do |therapy| %>
+    <%= render therapy %>
+    <p>
+      <%= link_to "Show this therapy", therapy %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New therapy", new_therapy_path %>

@@ -1,0 +1,2 @@
+class Retention < ApplicationRecord
+end

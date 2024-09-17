@@ -1,0 +1,11 @@
+<% content_for :title, "New human resource" %>
+
+<h1>New human resource</h1>
+
+<%= render "form", human_resource: @human_resource %>
+
+<br>
+
+<div>
+  <%= link_to "Back to human resources", human_resources_path %>
+</div>
