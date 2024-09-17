@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_17_123826) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_17_140531) do
   create_table "accountings", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -320,6 +320,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_123826) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "themes", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "therapies", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -416,6 +421,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_123826) do
   create_table "weathers", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

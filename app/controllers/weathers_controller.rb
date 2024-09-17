@@ -65,6 +65,6 @@ class WeathersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def weather_params
-      params.fetch(:weather, {})
+      params.require(:weather).permit(:title)
     end
 end

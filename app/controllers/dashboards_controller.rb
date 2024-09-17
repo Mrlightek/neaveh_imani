@@ -10,8 +10,8 @@ class DashboardsController < ApplicationController
   # GET /dashboards/1 or /dashboards/1.json
   def show
     #@user = User.find(params[:id])
-    @user = current_user
-    @dashboard = @user.dashboard
+    @current_user = current_user
+    @dashboard = @current_userdashboard
   end
 
   # GET /dashboards/new
